@@ -101,11 +101,4 @@
                 <url>scp://dist.wso2.org/home/httpd/dist.wso2.org/snapshots/maven2/</url>
             </snapshotRepository>
     	</distributionManagement>
-
-	<properties>
-	    <orbit.version.wsdl4j>1.6.2-wso2v4</orbit.version.wsdl4j>
-	    <orbit.version.axiom>1.2.11.wso2v5</orbit.version.axiom>
-	    <orbit.version.axis2>1.6.1.wso2v11</orbit.version.axis2>
-	    <carbon.platform.package.export.version>${project.version}</carbon.platform.package.export.version>
-	</properties>
 </project>

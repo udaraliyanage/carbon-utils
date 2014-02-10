@@ -41,15 +41,9 @@
            <dependency>
                 <groupId>org.apache.axis2.wso2</groupId>
                 <artifactId>axis2</artifactId>
-                <version>${axis2.orbit.version}</version>
+                <version>${orbit.version.axis2}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
-
-    <properties>
-        <wso2carbon.version.endpoint>${project.version}</wso2carbon.version.endpoint>
-        <axis2.osgi.version.range.endpoint>${axis2.osgi.version.range}</axis2.osgi.version.range.endpoint>
-        <axis2.orbit.version>1.6.1.wso2v11</axis2.orbit.version>
-    </properties>
 </project>
 
