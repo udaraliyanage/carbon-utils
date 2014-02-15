@@ -13,6 +13,10 @@
         <module>service-stubs/remote-tasks</module>
         <module>service-stubs/reporting</module>
         <module>service-stubs/url-mapper</module>
+        <module>service-stubs/userstore-config</module>
+        <module>service-stubs/user-manager</module>
+        <module>service-stubs/remote-usermgt</module>
+        <module>service-stubs/event</module>
 	<module>components/cluster-mgt</module>
         <module>components/url-mapper</module>
         <module>components/transaction-manager</module>
@@ -24,6 +28,10 @@
         <module>components/wsdl2form</module>
         <module>components/logging</module>
         <module>components/remote-tasks</module>
+        <module>components/userstore-config</module>
+        <module>components/user-manager</module>
+        <module>components/remote-usermgt</module>
+        <module>components/event</module>
 	<module>features/cluster-mgt</module>
 	<module>features/hostobjects</module>  
 	<module>features/logging-mgt</module>  
@@ -33,6 +41,9 @@
 	<module>features/transaction-manager</module> 
 	<module>features/tryit</module>  
 	<module>features/url-mapper</module>
+	<module>features/user-manager</module>
+	<module>features/remote-usermgt</module>
+	<module>features/event</module>
     </modules>
 
     <repositories>
@@ -285,6 +296,11 @@
 		    <dependency>
             		<groupId>org.wso2.carbon</groupId>
             		<artifactId>org.wso2.carbon.cluster.mgt.core</artifactId>
+			<version>${project.version}</version>
+        	    </dependency>
+		    <dependency>
+            		<groupId>org.wso2.carbon</groupId>
+            		<artifactId>org.wso2.carbon.event.core</artifactId>
 			<version>${project.version}</version>
         	    </dependency>
 
@@ -725,6 +741,9 @@
         <!-- CXF -->
         <orbit.version.cxf>2.6.1.wso2v2</orbit.version.cxf>
 
+	<!--Wso2 Secure Vault -->
+	<securevault.version>1.0.0</securevault.version>
+
 	<!-- Misc -->
 	<jxl.wso2.version>2.6.8.wso2v1</jxl.wso2.version>
 	<junit.version>3.8.2</junit.version>
@@ -739,6 +758,7 @@
 	<jetty.version>6.1.5</jetty.version>
 	<orbit.version.wsdl4j>1.6.2.wso2v4</orbit.version.wsdl4j>
 	<quartz2.wso2.version>2.1.1.wso2v1</quartz2.wso2.version>
+	<orbit.version.geronimo-jms_1.1_spec>1.1.0.wso2v1</orbit.version.geronimo-jms_1.1_spec>
 	<google.guava.wso2.version>12.0.0.wso2v1</google.guava.wso2.version>
     </properties>    
 </project>
