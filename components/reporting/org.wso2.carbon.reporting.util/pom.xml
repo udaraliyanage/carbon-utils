@@ -38,7 +38,7 @@
         <dependency>
             <artifactId>org.wso2.carbon.reporting.api</artifactId>
             <groupId>org.wso2.carbon</groupId>
-            <version>${wso2carbon.version.reporting}</version>
+            <version>${project.version.reporting}</version>
         </dependency>
         <dependency>
             <groupId>commons-logging</groupId>

@@ -21,9 +21,9 @@
 
     <parent>
         <groupId>org.wso2.carbon</groupId>
-        <artifactId>carbon-component-utils</artifactId>
+        <artifactId>carbon-utils</artifactId>
         <version>4.3.0-SNAPSHOT</version>
-	<relativePath>../pom.xml</relativePath>
+	<relativePath>../../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -40,7 +40,7 @@
     </modules>
 
     <properties>
-        <wso2carbon.version.cluster-mgt>${project.version}</wso2carbon.version.cluster-mgt>
+        <project.version.cluster-mgt>${project.version}</project.version.cluster-mgt>
         <axis2.wso2.version.cluster-mgt>${axis2.wso2.version}</axis2.wso2.version.cluster-mgt>
         <axis2.osgi.version.range.cluster-mgt>${axis2.osgi.version.range}</axis2.osgi.version.range.cluster-mgt>
     </properties>

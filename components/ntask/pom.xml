@@ -21,9 +21,9 @@
 
     <parent>
         <groupId>org.wso2.carbon</groupId>
-        <artifactId>carbon-component-utils</artifactId>
+        <artifactId>carbon-utils</artifactId>
         <version>4.3.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -44,17 +44,17 @@
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.core</artifactId>
-                <version>${wso2carbon.version.ntask}</version>
+                <version>${project.version.ntask}</version>
             </dependency>
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.utils</artifactId>
-                <version>${wso2carbon.version.ntask}</version>
+                <version>${project.version.ntask}</version>
             </dependency>
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.ntask.common</artifactId>
-                <version>${wso2carbon.version.ntask}</version>
+                <version>${project.version.ntask}</version>
             </dependency>
             <dependency>
                 <groupId>org.quartz-scheduler.wso2</groupId>
@@ -64,13 +64,13 @@
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.ntask.core</artifactId>
-                <version>${wso2carbon.version.ntask}</version>
+                <version>${project.version.ntask}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
 
     <properties>
-        <wso2carbon.version.ntask>${project.version}</wso2carbon.version.ntask>
+        <project.version.ntask>${project.version}</project.version.ntask>
     </properties>
 
 </project>
