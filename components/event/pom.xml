@@ -138,7 +138,6 @@
         <module>org.wso2.carbon.event.core</module>
         <module>org.wso2.carbon.event.ws</module>
         <module>org.wso2.carbon.event.admin</module>
-        <module>org.wso2.carbon.event.sink</module>
     </modules>
 
 
