@@ -512,6 +512,11 @@
 			<version>${axis2.wso2.version}</version>
 		    </dependency>
 		    <dependency>
+			<groupId>org.apache.axis2.wso2</groupId>
+			<artifactId>axis2-client</artifactId>
+			<version>${axis2.wso2.version}</version>
+		    </dependency>
+		    <dependency>
                 	<groupId>org.apache.neethi.wso2</groupId>
                 	<artifactId>neethi</artifactId>
                 	<version>${orbit.version.neethi}</version>
