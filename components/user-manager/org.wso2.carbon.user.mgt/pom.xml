@@ -103,8 +103,8 @@
                             org.wso2.carbon.user.mgt.*
                         </Export-Package>
                         <Import-Package>
-                            org.apache.axiom.*; version="${imp.pkg.version.axiom}",
-                            org.wso2.carbon.user.core.*;version="4.0.5",
+                            org.apache.axiom.*; version="${axiom.osgi.version.range}",
+                            org.wso2.carbon.user.core.*;version="${carbon.platform.version}",
                             org.osgi.framework.*,
                             org.wso2.carbon.registry.core.*,
                             javax.xml.namespace.*;version="0.0.0",
