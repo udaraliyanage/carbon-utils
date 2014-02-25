@@ -32,6 +32,7 @@
         <module>components/user-manager</module>
         <module>components/remote-usermgt</module>
         <module>components/event</module>
+        <module>components/ws-discovery-core</module>
 	<module>features/cluster-mgt</module>
 	<module>features/hostobjects</module>  
 	<module>features/logging-mgt</module>  
@@ -44,6 +45,7 @@
 	<module>features/user-manager</module>
 	<module>features/remote-usermgt</module>
 	<module>features/event</module>
+	<module>features/ws-discovery-core</module>
     </modules>
 
     <repositories>
@@ -303,6 +305,11 @@
             		<artifactId>org.wso2.carbon.event.core</artifactId>
 			<version>${project.version}</version>
         	    </dependency>
+		    <dependency>
+            		<groupId>org.wso2.carbon</groupId>
+            		<artifactId>org.wso2.carbon.discovery.core</artifactId>
+			<version>${project.version}</version>
+        	    </dependency>
 
 		    <!-- Orbit bundle dependencies -->
 		    <dependency>
@@ -320,6 +327,12 @@
 			    </exclusion>
 			</exclusions>
 		    </dependency>
+		    <dependency>
+                	<groupId>xmlunit</groupId>
+                	<artifactId>xmlunit</artifactId>
+                	<version>${xmlunit.version}</version>
+                	<scope>test</scope>
+                    </dependency>
 		    <dependency>
                 	<groupId>commons-logging</groupId>
                 	<artifactId>commons-logging</artifactId>
@@ -532,11 +545,6 @@
                 	<artifactId>axiom</artifactId>
 			<version>${orbit.version.axiom}</version>
             	    </dependency>
-		    <dependency>
-			<groupId>org.apache.ws.commons.axiom.wso2</groupId>
-			<artifactId>axiom</artifactId>
-			<version>${axiom.wso2.version}</version>
-		    </dependency>
 		    <dependency>
                 	<groupId>org.apache.ws.commons.schema.wso2</groupId>
                 	<artifactId>XmlSchema</artifactId>
@@ -765,6 +773,7 @@
 	<quartz2.wso2.version>2.1.1.wso2v1</quartz2.wso2.version>
 	<orbit.version.geronimo-jms_1.1_spec>1.1.0.wso2v1</orbit.version.geronimo-jms_1.1_spec>
 	<google.guava.wso2.version>12.0.0.wso2v1</google.guava.wso2.version>
+	<xmlunit.version>1.1</xmlunit.version>
     </properties>    
 </project>
 
