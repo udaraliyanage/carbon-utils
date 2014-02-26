@@ -23,7 +23,7 @@
         <groupId>org.wso2.carbon</groupId>
         <artifactId>ntask-features</artifactId>
         <version>4.3.0-SNAPSHOT</version>
-	<relativePath>../pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -32,42 +32,37 @@
     <version>4.3.0-SNAPSHOT</version>
     <name>WSO2 Carbon - Tasks Core Feature</name>
     <url>http://wso2.org</url>
-    <description>This feature contains the bundles required for core tasks functionality</description>
+    <description>This feature contains the bundles required for core tasks functionality
+    </description>
 
     <dependencies>
         <dependency>
-	   <groupId>org.wso2.carbon</groupId>
-	   <artifactId>org.wso2.carbon.ntask.core</artifactId>
-	   <version>4.3.0-SNAPSHOT</version>
-	</dependency>
+            <groupId>org.wso2.carbon</groupId>
+            <artifactId>org.wso2.carbon.ntask.core</artifactId>
+        </dependency>
         <dependency>
-	   <groupId>org.wso2.carbon</groupId>
-	   <artifactId>org.wso2.carbon.ntask.solutions</artifactId>
-	   <version>4.3.0-SNAPSHOT</version>
-	</dependency>
+            <groupId>org.wso2.carbon</groupId>
+            <artifactId>org.wso2.carbon.ntask.solutions</artifactId>
+        </dependency>
         <dependency>
-	   <groupId>org.wso2.carbon</groupId>
-	   <artifactId>org.wso2.carbon.ntask.common</artifactId>
-           <version>4.3.0-SNAPSHOT</version>
-	</dependency>
-	<dependency>
-	   <groupId>org.wso2.carbon</groupId>
-	   <artifactId>org.wso2.carbon.remote-tasks.stub</artifactId>
-	   <version>4.3.0-SNAPSHOT</version>
-	</dependency>
+            <groupId>org.wso2.carbon</groupId>
+            <artifactId>org.wso2.carbon.ntask.common</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.wso2.carbon</groupId>
+            <artifactId>org.wso2.carbon.remote-tasks.stub</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.quartz-scheduler.wso2</groupId>
             <artifactId>quartz</artifactId>
         </dependency>
-	 <dependency>
+        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
-            <version>${slf4j.version}</version>
         </dependency>
     </dependencies>
 
@@ -89,15 +84,21 @@
                             <propertiesFile>../../../etc/feature.properties</propertiesFile>
                             <adviceFile>
                                 <properties>
-                                    <propertyDef>org.wso2.carbon.p2.category.type:server</propertyDef>
-                                    <propertyDef>org.eclipse.equinox.p2.type.group:false</propertyDef>
+                                    <propertyDef>org.wso2.carbon.p2.category.type:server
+                                    </propertyDef>
+                                    <propertyDef>org.eclipse.equinox.p2.type.group:false
+                                    </propertyDef>
                                 </properties>
                             </adviceFile>
                             <bundles>
-                                <bundleDef>org.wso2.carbon:org.wso2.carbon.ntask.core:4.3.0-SNAPSHOT</bundleDef>
+                                <bundleDef>
+                                    org.wso2.carbon:org.wso2.carbon.ntask.core:4.3.0-SNAPSHOT
+                                </bundleDef>
                                 <bundleDef>org.wso2.carbon:org.wso2.carbon.ntask.common</bundleDef>
-                                <bundleDef>org.wso2.carbon:org.wso2.carbon.ntask.solutions</bundleDef>
-                                <bundleDef>org.wso2.carbon:org.wso2.carbon.remote-tasks.stub</bundleDef>
+                                <bundleDef>org.wso2.carbon:org.wso2.carbon.ntask.solutions
+                                </bundleDef>
+                                <bundleDef>org.wso2.carbon:org.wso2.carbon.remote-tasks.stub
+                                </bundleDef>
                                 <bundleDef>org.quartz-scheduler.wso2:quartz</bundleDef>
                                 <bundleDef>org.slf4j:slf4j-log4j12</bundleDef>
                                 <bundleDef>org.slf4j:slf4j-api</bundleDef>
@@ -106,8 +107,8 @@
                     </execution>
                 </executions>
             </plugin>
-	    
-	    <plugin>
+
+            <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <executions>
                     <execution>
@@ -132,10 +133,7 @@
                     </execution>
                 </executions>
             </plugin>
-	    
+
         </plugins>
     </build>
-    <properties>
-            <slf4j.version>1.6.1</slf4j.version>
-    </properties>
 </project>

@@ -38,28 +38,4 @@
 	    <module>org.wso2.carbon.cluster.mgt.server.feature</module>
     </modules>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.cluster.mgt.admin</artifactId>
-                <version>${project.version.cluster-mgt}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.cluster.mgt.admin.ui</artifactId>
-                <version>${project.version.cluster-mgt}</version>
-            </dependency>
-	    <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.cluster.mgt.admin.stub</artifactId>
-                <version>${project.version.cluster-mgt}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <properties>
-        <project.version.cluster-mgt>${project.version}</project.version.cluster-mgt>
-    </properties>
-
 </project>

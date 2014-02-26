@@ -14,16 +14,16 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
 -->
-        
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 
     <parent>
         <groupId>org.wso2.carbon</groupId>
-   	<artifactId>tryit-features</artifactId>
+        <artifactId>tryit-features</artifactId>
         <version>4.3.0-SNAPSHOT</version>
-	<relativePath>../pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -32,25 +32,23 @@
     <packaging>pom</packaging>
     <name>WSO2 Carbon - Tryit Feature</name>
     <url>http://wso2.org</url>
-    <description>This feature contains the bundles required for the wso2 Try-it functionality</description>
+    <description>This feature contains the bundles required for the wso2 Try-it functionality
+    </description>
 
     <dependencies>
         <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.tryit.server.feature</artifactId>
-            <version>4.3.0-SNAPSHOT</version>
             <type>zip</type>
-	    </dependency>
+        </dependency>
         <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.tryit.ui.feature</artifactId>
-            <version>4.3.0-SNAPSHOT</version>
             <type>zip</type>
-	</dependency>
-	<dependency>
+        </dependency>
+        <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.wsdl2form</artifactId>
-            <version>4.3.0-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
@@ -71,11 +69,16 @@
                             <id>org.wso2.carbon.tryit</id>
                             <propertiesFile>../../../etc/feature.properties</propertiesFile>
                             <importFeatures>
-                                <importFeatureDef>org.wso2.carbon.core:${project.version}</importFeatureDef>
+                                <importFeatureDef>org.wso2.carbon.core:${project.version}
+                                </importFeatureDef>
                             </importFeatures>
                             <includedFeatures>
-                                <includedFeatureDef>org.wso2.carbon:org.wso2.carbon.tryit.server.feature:4.3.0-SNAPSHOT</includedFeatureDef>
-                                <includedFeatureDef>org.wso2.carbon:org.wso2.carbon.tryit.ui.feature:4.3.0-SNAPSHOT</includedFeatureDef>
+                                <includedFeatureDef>
+                                    org.wso2.carbon:org.wso2.carbon.tryit.server.feature:4.3.0-SNAPSHOT
+                                </includedFeatureDef>
+                                <includedFeatureDef>
+                                    org.wso2.carbon:org.wso2.carbon.tryit.ui.feature:4.3.0-SNAPSHOT
+                                </includedFeatureDef>
                             </includedFeatures>
                         </configuration>
                     </execution>

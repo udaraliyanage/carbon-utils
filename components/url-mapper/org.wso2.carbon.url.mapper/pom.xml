@@ -21,14 +21,14 @@
         <groupId>org.wso2.carbon</groupId>
         <artifactId>url-mapper-parent</artifactId>
         <version>4.3.0-SNAPSHOT</version>
-	<relativePath>../pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
 
     <modelVersion>4.0.0</modelVersion>
     <artifactId>org.wso2.carbon.url.mapper</artifactId>
     <packaging>bundle</packaging>
-    <version>4.3.0-SNAPSHOT</version>  
+    <version>4.3.0-SNAPSHOT</version>
     <name>WSO2 Carbon - Url Mapper BE</name>
 
 
@@ -37,49 +37,41 @@
         <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.tomcat.ext</artifactId>
-            <version>4.3.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.utils</artifactId>
-            <version>4.3.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.tomcat</artifactId>
-            <version>4.3.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.tomcat.patch</artifactId>
-            <version>4.3.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.registry.core</artifactId>
-            <version>4.3.0-SNAPSHOT</version>
         </dependency>
 
         <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.core</artifactId>
-            <version>4.3.0-SNAPSHOT</version>
         </dependency>
 
-	<dependency>
+        <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.url.mapper.clustermessage</artifactId>
-            <version>${project.parent.version}</version>
         </dependency>
-        
+
         <dependency>
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.framework</artifactId>
-            <version>1.0.3</version>
             <scope>provided</scope>
             <optional>true</optional>
             <exclusions>
@@ -125,7 +117,7 @@
                         <Import-Package>
 
                             org.wso2.carbon.registry.core.*,
-                            org.wso2.carbon.registry.core.*;version=1.0.1,
+                            org.wso2.carbon.registry.core.*;version="${carbon.platform.package.import.version.range}",
                             *;resolution:=optional
                         </Import-Package>
                         <Export-Package>

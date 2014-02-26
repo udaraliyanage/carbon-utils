@@ -39,39 +39,5 @@
         <module>org.wso2.carbon.ntask.solutions</module>
     </modules>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.core</artifactId>
-                <version>${project.version.ntask}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.utils</artifactId>
-                <version>${project.version.ntask}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.ntask.common</artifactId>
-                <version>${project.version.ntask}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.quartz-scheduler.wso2</groupId>
-                <artifactId>quartz</artifactId>
-                <version>${quartz2.orbit.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.ntask.core</artifactId>
-                <version>${project.version.ntask}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <properties>
-        <project.version.ntask>${project.version}</project.version.ntask>
-    </properties>
-
 </project>
 

@@ -37,31 +37,5 @@
         <module>org.wso2.carbon.tryit</module>
         <module>org.wso2.carbon.tryit.ui</module>
     </modules>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.utils</artifactId>
-                <version>${project.version.tryit}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.core</artifactId>
-                <version>${project.version.tryit}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.ui</artifactId>
-                <version>${project.version.tryit}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <properties>
-        <project.version.tryit>${project.version}</project.version.tryit>
-        <axis2.osgi.version.range.tryit>${axis2.osgi.version.range}</axis2.osgi.version.range.tryit>
-        <axiom.osgi.version.range.tryit>${axiom.osgi.version.range}</axiom.osgi.version.range.tryit>
-    </properties>
     
 </project>

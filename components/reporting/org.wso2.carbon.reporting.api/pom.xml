@@ -31,7 +31,6 @@
     <name>WSO2 Carbon - Reporting API</name>
 
     <dependencies>
-
         <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.core</artifactId>
@@ -43,7 +42,6 @@
         <dependency>
             <groupId>jasperreports.wso2</groupId>
             <artifactId>jasperreports</artifactId>
-            <version>${jasperreports.wso2.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>commons-logging</groupId>

@@ -44,17 +44,14 @@
         <dependency>
             <groupId>opensaml.wso2</groupId>
             <artifactId>opensaml2</artifactId>
-            <version>${opensaml2.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-codec.wso2</groupId>
             <artifactId>commons-codec</artifactId>
-            <version>${commons-codec.version}</version>
         </dependency>
         <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.core</artifactId>
-            <version>4.1.0</version>
         </dependency>
     </dependencies>
 
@@ -82,8 +79,4 @@
             </plugin>
         </plugins>
     </build>
-	<properties>
-		<commons-codec.version>1.4.0.wso2v1</commons-codec.version>
-		<opensaml2.version>2.4.1.wso2v1</opensaml2.version>
-	</properties>
 </project>

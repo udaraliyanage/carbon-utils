@@ -23,7 +23,7 @@
         <groupId>org.wso2.carbon</groupId>
         <artifactId>carbon-utils</artifactId>
         <version>4.3.0-SNAPSHOT</version>
-	<relativePath>../../pom.xml</relativePath>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -35,136 +35,12 @@
     <modules>
         <module>org.wso2.carbon.reporting.server.feature</module>
         <module>org.wso2.carbon.reporting.ui.feature</module>
-<!--
-        <module>org.wso2.carbon.reporting.template.server.feature</module>
-        <module>org.wso2.carbon.reporting.feature</module>
-        <module>org.wso2.carbon.reporting.template.ui.feature</module>
--->
+        <!--
+                <module>org.wso2.carbon.reporting.template.server.feature</module>
+                <module>org.wso2.carbon.reporting.feature</module>
+                <module>org.wso2.carbon.reporting.template.ui.feature</module>
+        -->
     </modules>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.reporting.core</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.reporting.ui</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.reporting.util</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.reporting.api</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.reporting.stub</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.bam.presentation.stub</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.bam.analyzer.stub</artifactId>
-                <version>${project.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.reporting.template.ui</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.reporting.template.core</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.reporting.template.stub</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-            <dependency>
-                <groupId>jasperreports.wso2</groupId>
-                <artifactId>jasperreports</artifactId>
-                <version>${jasperreports.wso2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>jxl.wso2</groupId>
-                <artifactId>jxl</artifactId>
-                <version>${jxl.wso2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.lowagie.wso2</groupId>
-                <artifactId>itext</artifactId>
-                <version>${itext.wso2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-beanutils.wso2</groupId>
-                <artifactId>commons-beanutils</artifactId>
-                <version>${commons.beanutils.wso2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>commons-digester.wso2</groupId>
-                <artifactId>commons-digester</artifactId>
-                <version>${commons.digester.wso2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>jcommon.wso2</groupId>
-                <artifactId>jcommon</artifactId>
-                <version>${jcommon.wso2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>jasper-jdt.wso2</groupId>
-                <artifactId>jasper-jdt</artifactId>
-                <version>${jasper.jdt.wso2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>jfree.wso2</groupId>
-                <artifactId>jfreechart</artifactId>
-                <version>${jfree.wso2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.datasource</artifactId>
-                <version>${project.version.datasource}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.datasource.ui</artifactId>
-                <version>${project.version.datasource}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.reporting.custom.ui</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-        </dependencies>
-
-    </dependencyManagement>
-
-    <properties>
-        <project.version.reporting>${project.version}</project.version.reporting>
-        <jasperreports.wso2.version>4.5.0.wso2v1</jasperreports.wso2.version>
-        <jxl.wso2.version>2.6.8.wso2v1</jxl.wso2.version>
-        <itext.wso2.version>2.1.7.wso2v1</itext.wso2.version>
-        <commons.beanutils.wso2.version>1.8.0.wso2v1</commons.beanutils.wso2.version>
-        <commons.digester.wso2.version>1.8.1.wso2v1</commons.digester.wso2.version>
-        <jcommon.wso2.version>1.0.15.wso2v1</jcommon.wso2.version>
-        <jasper.jdt.wso2.version>6.0.18.wso2v1</jasper.jdt.wso2.version>
-        <jfree.wso2.version>1.0.13.wso2v1</jfree.wso2.version>
-        <project.version.datasource>${project.version}</project.version.datasource>
-    </properties>
 
 </project>
 

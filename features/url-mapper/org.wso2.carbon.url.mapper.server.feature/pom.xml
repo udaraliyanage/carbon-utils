@@ -38,12 +38,10 @@
 	<dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.url.mapper.clustermessage</artifactId>
-	    <version>${carbon.platform.version}</version>
         </dependency>
         <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.url.mapper</artifactId>
-	    <version>${carbon.platform.version}</version>
         </dependency>
     </dependencies>
 
