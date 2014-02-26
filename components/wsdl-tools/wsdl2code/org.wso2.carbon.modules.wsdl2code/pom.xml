@@ -71,8 +71,8 @@
                         <Bundle-Name>${project.artifactId}</Bundle-Name>
                         <Private-Package>org.wso2.carbon.wsdl2code</Private-Package>
                         <Import-Package>
-                            org.apache.axis2.*; version="${axis2.osgi.version.range.wsdl2code}",
-                            org.apache.axiom.*; version="${axiom.osgi.version.range.wsdl2code}",
+                            org.apache.axis2.*; version="${axis2.osgi.version.range}",
+                            org.apache.axiom.*; version="${axiom.osgi.version.range}",
                             javax.xml.stream.*; version="1.0.1",
                             *;resolution:=optional
                         </Import-Package>
