@@ -23,7 +23,7 @@
         <groupId>org.wso2.carbon</groupId>
         <artifactId>carbon-utils</artifactId>
         <version>4.3.0-SNAPSHOT</version>
-	<relativePath>../../pom.xml</relativePath>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -38,36 +38,4 @@
         <module>org.wso2.carbon.wsdl2form</module>
     </modules>
 
-	<dependencyManagement>
-        <dependencies>
-			<dependency>
-		        <groupId>org.apache.axis2.wso2</groupId>
-		        <artifactId>axis2</artifactId>
-				<version>${axis2.wso2.version.wsdl2form}</version>
-		    </dependency>
-
-			<dependency>
-		        <groupId>org.apache.ws.commons.axiom.wso2</groupId>
-		        <artifactId>axiom</artifactId>
-				<version>${axiom.wso2.version.wsdl2form}</version>
-		    </dependency>
-
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.utils</artifactId>
-                <version>${project.version.wsdl2form}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.core</artifactId>
-                <version>${project.version.wsdl2form}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <properties>
-        <project.version.wsdl2form>${project.version}</project.version.wsdl2form>
-				<axis2.wso2.version.wsdl2form>${axis2.wso2.version}</axis2.wso2.version.wsdl2form>
-				<axiom.wso2.version.wsdl2form>${axiom.wso2.version}</axiom.wso2.version.wsdl2form>
-    </properties>
 </project>

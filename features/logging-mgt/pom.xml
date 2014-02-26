@@ -14,7 +14,7 @@
  ~ See the License for the specific language governing permissions and
  ~ limitations under the License.
 -->
-        
+
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -23,7 +23,7 @@
         <groupId>org.wso2.carbon</groupId>
         <artifactId>carbon-utils</artifactId>
         <version>4.3.0-SNAPSHOT</version>
-	<relativePath>../../pom.xml</relativePath>
+        <relativePath>../../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -35,118 +35,9 @@
     <modules>
         <module>org.wso2.carbon.logging.mgt.feature</module>
         <module>org.wso2.carbon.logging.mgt.server.feature</module>
-	<module>org.wso2.carbon.logging.mgt.ui.feature</module>
-<!--
-        <module>org.wso2.carbon.logging.summarizer.feature</module>
-         <module>org.wso2.carbon.logging.summarizer.server.feature</module>
--->   
- </modules>
+        <module>org.wso2.carbon.logging.mgt.ui.feature</module>
+    </modules>
 
-    <dependencyManagement>
-        <dependencies>
- 	   
- 	
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.logging.service</artifactId>
-                <version>${project.version.logging.mgt}</version>
-            </dependency>
-              <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.logging.summarizer</artifactId>
-                <version>${project.version.logging.mgt}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.logging.admin.ui</artifactId>
-                <version>${project.version.logging.mgt}</version>
-            </dependency>
-		<dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.logging.view.ui</artifactId>
-                <version>${project.version.logging.mgt}</version>
-            </dependency>
-	<dependency>
-                <groupId>org.springframework.ws.wso2</groupId>
-                <artifactId>spring.framework</artifactId>
-		<version>${spring.framework.wso2.version}</version>
-            </dependency>
-           <dependency>
-                <groupId>com.google.guava.wso2</groupId>
-                <artifactId>guava</artifactId>
-                <version>${guava.version}</version>
-            </dependency>
-          <!--Cassandra -->
-
-            <dependency>
-                <groupId>org.apache.cassandra.wso2</groupId>
-                <artifactId>apache-cassandra</artifactId>
-                <version>${cassandra.version}</version>
-            </dependency>
-
-            <!--Hector-->
-            <dependency>
-                <groupId>org.hectorclient</groupId>
-                <artifactId>hector-core</artifactId>
-                <version>${hector-core.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>libthrift.wso2</groupId>
-                <artifactId>libthrift</artifactId>
-                <version>${libthrift.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.perf4j.wso2</groupId>
-                <artifactId>perf4j</artifactId>
-                <version>${perf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.cliffc.high_scale_lib.wso2</groupId>
-                <artifactId>high-scale-lib</artifactId>
-                <version>${highscale.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-                <version>${slf4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>antlr.wso2</groupId>
-                <artifactId>antlr</artifactId>
-                <version>${antlr.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.antlr.wso2</groupId>
-                <artifactId>antlr-runtime</artifactId>
-                <version>${antlr.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.databridge.datapublisher.feature</artifactId>
-                <version>${project.version.logging.mgt}</version>
-                   <type>zip</type>
-           </dependency>
-        </dependencies>
- 	
-    </dependencyManagement>
-
-    <properties>
-         <project.version.logging.mgt>${project.version}</project.version.logging.mgt>
-        <spring.framework.wso2.version>${orbit.version.spring}</spring.framework.wso2.version>
-        <cassandra.version>1.1.0.wso2v2</cassandra.version>
-        <antlr.version>3.2.0.wso2v1</antlr.version>
-         <hector-core.version>1.1-0</hector-core.version>
-        <libthrift.version>0.7.wso2v1</libthrift.version>
-        <perf4j.version>0.9.12.wso2v1</perf4j.version>
-        <highscale.version>1.1.2.wso2v1</highscale.version>
-        <slf4j.version>1.6.1</slf4j.version>
-	<guava.version>${google.guava.wso2.version}</guava.version>
-    </properties>
 
 </project>
 

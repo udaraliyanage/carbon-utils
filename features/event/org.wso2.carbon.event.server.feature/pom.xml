@@ -23,7 +23,7 @@
         <groupId>org.wso2.carbon</groupId>
         <artifactId>event-feature</artifactId>
         <version>4.3.0-SNAPSHOT</version>
-	<relativePath>../pom.xml</relativePath>
+        <relativePath>../pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -32,33 +32,32 @@
     <name>WSO2 Carbon - Event Server Feature</name>
     <version>4.3.0-SNAPSHOT</version>
     <url>http://wso2.org</url>
-    <description>This feature contains the bundles required for Back-end Event functionality</description>
-    <dependencies>      
-	<dependency>
+    <description>This feature contains the bundles required for Back-end Event functionality
+    </description>
+    <dependencies>
+        <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.event.core</artifactId>
-            <version>4.3.0-SNAPSHOT</version>
         </dependency>
-	<dependency>
+        <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.event.admin</artifactId>
         </dependency>
-	<dependency>
+        <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.event.ws</artifactId>
-	    <version>4.3.0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.qpid.stub</artifactId>
         </dependency>
-<!--
-        <dependency>
-            <groupId>org.wso2.carbon</groupId>
-            <artifactId>org.wso2.carbon.messagebox.server.feature</artifactId>
-            <type>zip</type>
-        </dependency>
--->
+        <!--
+                <dependency>
+                    <groupId>org.wso2.carbon</groupId>
+                    <artifactId>org.wso2.carbon.messagebox.server.feature</artifactId>
+                    <type>zip</type>
+                </dependency>
+        -->
         <dependency>
             <groupId>org.wso2.carbon</groupId>
             <artifactId>org.wso2.carbon.event.common.feature</artifactId>
@@ -67,7 +66,7 @@
     </dependencies>
     <build>
         <plugins>
-	   <plugin>
+            <plugin>
                 <artifactId>maven-resources-plugin</artifactId>
                 <executions>
                     <execution>
@@ -82,7 +81,7 @@
                                 <resource>
                                     <directory>resources</directory>
                                     <includes>
-                                        <include>conf/event-broker.xml</include>                                   
+                                        <include>conf/event-broker.xml</include>
                                         <include>p2.inf</include>
                                         <include>build.properties</include>
                                     </includes>
@@ -106,10 +105,12 @@
                         <configuration>
                             <id>org.wso2.carbon.event.server</id>
                             <propertiesFile>../../../etc/feature.properties</propertiesFile>
-			    <adviceFile>
+                            <adviceFile>
                                 <properties>
-                                    <propertyDef>org.wso2.carbon.p2.category.type:server</propertyDef>
-                                    <propertyDef>org.eclipse.equinox.p2.type.group:false</propertyDef>
+                                    <propertyDef>org.wso2.carbon.p2.category.type:server
+                                    </propertyDef>
+                                    <propertyDef>org.eclipse.equinox.p2.type.group:false
+                                    </propertyDef>
                                 </properties>
                             </adviceFile>
                             <bundles>
@@ -119,11 +120,16 @@
                                 <bundleDef>org.wso2.carbon:org.wso2.carbon.qpid.stub</bundleDef>
                             </bundles>
                             <importFeatures>
-                                <importFeatureDef>org.wso2.carbon.core.server:${project.version}</importFeatureDef>			
-                                <importFeatureDef>org.wso2.carbon.registry.core.server:4.3.0-SNAPSHOT</importFeatureDef>			
+                                <importFeatureDef>org.wso2.carbon.core.server:${project.version}
+                                </importFeatureDef>
+                                <importFeatureDef>
+                                    org.wso2.carbon.registry.core.server:4.3.0-SNAPSHOT
+                                </importFeatureDef>
                             </importFeatures>
                             <includedFeatures>
-                                <includedFeatureDef>org.wso2.carbon:org.wso2.carbon.event.common.feature:${project.version}</includedFeatureDef>
+                                <includedFeatureDef>
+                                    org.wso2.carbon:org.wso2.carbon.event.common.feature:${project.version}
+                                </includedFeatureDef>
                             </includedFeatures>
                         </configuration>
                     </execution>

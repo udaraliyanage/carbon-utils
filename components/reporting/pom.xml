@@ -37,60 +37,7 @@
         <module>org.wso2.carbon.reporting.api</module>
         <module>org.wso2.carbon.reporting.core</module>
         <module>org.wso2.carbon.reporting.util</module>
-	<module>org.wso2.carbon.reporting.ui</module>
-<!--
-        <module>org.wso2.carbon.reporting.template.ui</module>
-        <module>org.wso2.carbon.reporting.template.core</module>
-        <module>org.wso2.carbon.reporting.custom.ui</module>
--->
+        <module>org.wso2.carbon.reporting.ui</module>
     </modules>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.core</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.ui</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.utils</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.reporting.api</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.reporting.util</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.reporting.core</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.reporting.ui</artifactId>
-                <version>${project.version.reporting}</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <properties>
-        <project.version.reporting>${project.version}</project.version.reporting>
-        <jasperreports.wso2.version.reporting>${jasperreports.wso2.version}</jasperreports.wso2.version.reporting>
-        <commons-logging.version.reporting>${commons-logging.version}</commons-logging.version.reporting>
-        <jxl.wso2.version.reporting>${jxl.wso2.version}</jxl.wso2.version.reporting>
-        <opencsv.reporting.version>1.8.wso2v1</opencsv.reporting.version>
-    </properties>
 
 </project>

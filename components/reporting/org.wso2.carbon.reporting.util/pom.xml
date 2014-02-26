@@ -38,17 +38,14 @@
         <dependency>
             <artifactId>org.wso2.carbon.reporting.api</artifactId>
             <groupId>org.wso2.carbon</groupId>
-            <version>${project.version.reporting}</version>
         </dependency>
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
-            <version>${commons-logging.version}</version>
         </dependency>
         <dependency>
             <groupId>jasperreports.wso2</groupId>
             <artifactId>jasperreports</artifactId>
-            <version>${jasperreports.wso2.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>commons-logging</groupId>
@@ -59,7 +56,6 @@
         <dependency>
             <groupId>jxl.wso2</groupId>
             <artifactId>jxl</artifactId>
-            <version>${jxl.wso2.version}</version>
         </dependency>
         <dependency>
             <groupId>au.com.bytecode.opencsv.wso2</groupId>

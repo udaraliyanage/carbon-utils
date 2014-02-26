@@ -16,28 +16,11 @@
     <artifactId>remote-tasks-features</artifactId>
     <packaging>pom</packaging>
     <url>http://wso2.org</url>
-    
+
     <modules>
         <module>org.wso2.carbon.remote-tasks.server.feature</module>
         <module>org.wso2.carbon.remote-tasks.ui.feature</module>
         <module>org.wso2.carbon.remote-tasks.feature</module>
     </modules>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.remotetasks.core</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.remotetasks.common</artifactId>
-            </dependency>
-            <dependency>
-                <groupId>org.wso2.carbon</groupId>
-                <artifactId>org.wso2.carbon.remotetasks.ui</artifactId>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>

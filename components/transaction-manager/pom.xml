@@ -28,15 +28,12 @@
     
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.wso2.carbon</groupId>
-    <artifactId>transaction-manager</artifactId>
+    <artifactId>transaction-mgt</artifactId>
     <packaging>pom</packaging>
-    <name>WSO2 Carbon - Transaction Manager</name>
+    <name>WSO2 Carbon - Transaction Manager - Aggregator Module</name>
     <url>http://wso2.org</url>
     <modules>
         <module>org.wso2.carbon.transaction.manager</module>
     </modules>
 
-    <build>
-
-    </build>
 </project>
