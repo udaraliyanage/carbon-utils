@@ -41,6 +41,7 @@
         <module>components/event</module>
         <module>components/ndatasource</module>
         <module>components/ws-discovery-core</module>
+        <module>components/soap-tracer</module>
         <module>components/wsdl-tools</module>
 
 
@@ -838,6 +839,11 @@
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.cluster.mgt.admin.stub</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.tracer.stub</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
