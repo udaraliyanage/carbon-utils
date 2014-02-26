@@ -63,6 +63,7 @@
         <module>features/ws-discovery-core</module>
         <module>features/wsdl-tools</module>
         <module>features/system-statistics</module>
+        <module>features/soap-tracer</module>
     </modules>
 
     <repositories>
@@ -768,6 +769,16 @@
                 <artifactId>org.wso2.carbon.statistics.ui</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.tracer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.tracer.ui</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!--dependency>
                 <groupId>org.apache.ws.commons.axiom.wso2</groupId>
                 <artifactId>axiom</artifactId>
@@ -1115,6 +1126,18 @@
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.system.statistics.ui.feature</artifactId>
+                <version>${project.version}</version>
+                <type>zip</type>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.soaptracer.server.feature</artifactId>
+                <version>${project.version}</version>
+                <type>zip</type>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.soaptracer.ui.feature</artifactId>
                 <version>${project.version}</version>
                 <type>zip</type>
             </dependency>
