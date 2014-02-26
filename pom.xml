@@ -22,6 +22,7 @@
         <module>service-stubs/ndatasource</module>
         <module>service-stubs/soap-tracer</module>
         <module>service-stubs/wsdl-tools</module>
+        <module>service-stubs/system-statistics</module>
 
 
         <module>components/cluster-mgt</module>
@@ -43,6 +44,7 @@
         <module>components/ws-discovery-core</module>
         <module>components/soap-tracer</module>
         <module>components/wsdl-tools</module>
+        <module>components/system-statistics</module>
 
 
         <module>features/cluster-mgt</module>
@@ -60,6 +62,7 @@
         <module>features/ndatasource</module>
         <module>features/ws-discovery-core</module>
         <module>features/wsdl-tools</module>
+        <module>features/system-statistics</module>
     </modules>
 
     <repositories>
