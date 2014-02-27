@@ -1465,7 +1465,7 @@
         <version.javax.servlet>3.0.0.v201112011016</version.javax.servlet>
 
         <!-- Rampart Version -->
-        <rampart.wso2.version>1.6.1.wso2v9</rampart.wso2.version>
+        <rampart.wso2.version>1.6.1.wso2v12</rampart.wso2.version>
 
         <!-- Opencsv version -->
         <opencsv.reporting.version>1.8.wso2v1</opencsv.reporting.version>
