@@ -20,6 +20,11 @@
         <module>service-stubs/remote-usermgt</module>
         <module>service-stubs/event</module>
         <module>service-stubs/ndatasource</module>
+        <module>service-stubs/soap-tracer</module>
+        <module>service-stubs/wsdl-tools</module>
+        <module>service-stubs/system-statistics</module>
+
+
         <module>components/cluster-mgt</module>
         <module>components/url-mapper</module>
         <module>components/transaction-manager</module>
@@ -37,6 +42,11 @@
         <module>components/event</module>
         <module>components/ndatasource</module>
         <module>components/ws-discovery-core</module>
+        <module>components/soap-tracer</module>
+        <module>components/wsdl-tools</module>
+        <module>components/system-statistics</module>
+
+
         <module>features/cluster-mgt</module>
         <module>features/hostobjects</module>
         <module>features/logging-mgt</module>
@@ -51,6 +61,9 @@
         <module>features/event</module>
         <module>features/ndatasource</module>
         <module>features/ws-discovery-core</module>
+        <module>features/wsdl-tools</module>
+        <module>features/system-statistics</module>
+        <module>features/soap-tracer</module>
     </modules>
 
     <repositories>
@@ -479,6 +492,11 @@
                 <version>${commons-dbcp.version}</version>
             </dependency>
             <dependency>
+                <groupId>commons-fileupload.wso2</groupId>
+                <artifactId>commons-fileupload</artifactId>
+                <version>${commons-fileupload.wso2.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>commons-beanutils</groupId>
                 <artifactId>commons-beanutils</artifactId>
                 <version>${commons-beanutils.version}</version>
@@ -502,6 +520,11 @@
                 <groupId>commons-io.wso2</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io.wso2.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-lang.wso2</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons-lang.wso2.version}</version>
             </dependency>
             <dependency>
                 <groupId>javax.mail</groupId>
@@ -705,6 +728,57 @@
                 <artifactId>axiom</artifactId>
                 <version>${orbit.version.axiom}</version>
             </dependency>
+
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.wsdl2code</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.wsdl2code.ui</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.java2wsdl</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.java2wsdl.ui</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.tools.wsdlvalidator</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.tools.wsdlvalidator.ui</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.statistics</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.statistics.ui</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.tracer</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.tracer.ui</artifactId>
+                <version>${project.version}</version>
+            </dependency>
             <!--dependency>
                 <groupId>org.apache.ws.commons.axiom.wso2</groupId>
                 <artifactId>axiom</artifactId>
@@ -793,6 +867,16 @@
             </dependency>
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.tracer.stub</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.wsdl2code.stub</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.discovery.stub</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -814,6 +898,11 @@
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.admin.mgt.stub</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.statistics.stub</artifactId>
                 <version>${project.version}</version>
             </dependency>
 
@@ -975,6 +1064,12 @@
                 <version>${xalan.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>xerces.wso2</groupId>
+                <artifactId>xercesImpl</artifactId>
+                <version>${xercesImpl.wso2.version}</version>
+            </dependency>
+
             <!-- Feature related dependencies -->
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
@@ -1024,6 +1119,30 @@
             </dependency>
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.system.statistics.server.feature</artifactId>
+                <version>${project.version}</version>
+                <type>zip</type>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.system.statistics.ui.feature</artifactId>
+                <version>${project.version}</version>
+                <type>zip</type>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.soaptracer.server.feature</artifactId>
+                <version>${project.version}</version>
+                <type>zip</type>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.soaptracer.ui.feature</artifactId>
+                <version>${project.version}</version>
+                <type>zip</type>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.ui.menu.tools</artifactId>
                 <version>${project.version}</version>
             </dependency>
@@ -1040,6 +1159,18 @@
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.transaction.manager.server.feature</artifactId>
+                <version>${project.version}</version>
+                <type>zip</type>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.wsdl.tools.server.feature</artifactId>
+                <version>${project.version}</version>
+                <type>zip</type>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.wsdl.tools.ui.feature</artifactId>
                 <version>${project.version}</version>
                 <type>zip</type>
             </dependency>
@@ -1259,6 +1390,13 @@
                 <artifactId>jcommon</artifactId>
                 <version>${jcommon.wso2.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>commons-httpclient.wso2</groupId>
+                <artifactId>commons-httpclient</artifactId>
+                <version>${orbit.version.commons.httpclient}</version>
+            </dependency>
+
             <dependency>
                 <groupId>jasper-jdt.wso2</groupId>
                 <artifactId>jasper-jdt</artifactId>
@@ -1318,6 +1456,7 @@
 
         <!-- Xerces Version -->
         <xercesImpl.version>2.8.1</xercesImpl.version>
+        <xercesImpl.wso2.version>2.8.1.wso2v1</xercesImpl.wso2.version>
 
         <!-- Hector -->
 
@@ -1356,8 +1495,12 @@
         <commons-io.wso2.version>2.0.0.wso2v1</commons-io.wso2.version>
         <commons-codec.version>1.4.0.wso2v1</commons-codec.version>
         <commons.digester.wso2.version>1.8.1.wso2v1</commons.digester.wso2.version>
+        <commons-fileupload.wso2.version>1.2.2.wso2v1</commons-fileupload.wso2.version>
+        <commons-lang.wso2.version>2.6.0.wso2v1</commons-lang.wso2.version>
+
         <!-- Validate Utility Version -->
         <validateutility.version>0.95</validateutility.version>
+        <wsdl-validator.version>1.2.0.wso2v1</wsdl-validator.version>
 
         <!-- Jasper Reports Version -->
         <version.jasper>2.2.2.v201205150955</version.jasper>
