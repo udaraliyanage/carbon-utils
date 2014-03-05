@@ -23,7 +23,7 @@
         <module>service-stubs/soap-tracer</module>
         <module>service-stubs/wsdl-tools</module>
         <module>service-stubs/system-statistics</module>
-
+        <module>service-stubs/message-flows</module>
 
         <module>components/cluster-mgt</module>
         <module>components/url-mapper</module>
@@ -45,7 +45,7 @@
         <module>components/soap-tracer</module>
         <module>components/wsdl-tools</module>
         <module>components/system-statistics</module>
-
+        <module>components/message-flows</module>
 
         <module>features/cluster-mgt</module>
         <module>features/hostobjects</module>
@@ -64,6 +64,7 @@
         <module>features/wsdl-tools</module>
         <module>features/system-statistics</module>
         <module>features/soap-tracer</module>
+        <module>features/message-flows</module>
     </modules>
 
     <repositories>
@@ -905,6 +906,21 @@
                 <artifactId>org.wso2.carbon.statistics.stub</artifactId>
                 <version>${project.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.messageflows.stub</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.messageflows</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.messageflows.ui</artifactId>
+                <version>${project.version}</version>
+            </dependency>
 
             <!-- Jasper -->
             <dependency>
@@ -1141,6 +1157,19 @@
                 <version>${project.version}</version>
                 <type>zip</type>
             </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.message.flows.server.feature</artifactId>
+                <version>${project.version}</version>
+                <type>zip</type>
+            </dependency>
+            <dependency>
+                <groupId>org.wso2.carbon</groupId>
+                <artifactId>org.wso2.carbon.message.flows.ui.feature</artifactId>
+                <version>${project.version}</version>
+                <type>zip</type>
+            </dependency>
+
             <dependency>
                 <groupId>org.wso2.carbon</groupId>
                 <artifactId>org.wso2.carbon.ui.menu.tools</artifactId>
