@@ -1502,6 +1502,8 @@
 
     <properties>
 
+        <wso2carbon.version>4.3.0-SNAPSHOT</wso2carbon.version>
+
         <!-- Carbon platform version comes here-->
         <carbon.platform.version>4.3.0-SNAPSHOT</carbon.platform.version>
         <carbon.platform.package.export.version>4.3.0-SNAPSHOT
