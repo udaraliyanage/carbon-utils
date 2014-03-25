@@ -314,7 +314,7 @@
                           numberOfPages="<%=numberOfPages%>"
                           noOfPageLinksToDisplay="<%=noOfPageLinksToDisplay%>"
                           page="view-roles.jsp" pageNumberParameterName="pageNumber"
-                          parameters="<%="username="+userName%>"/>
+                          parameters="<%=\"username=\"+userName%>"/>
         <form method="post" action="edit-user-roles-finish.jsp?viewRoles=true" onsubmit="return doValidation();"
               name="edit_users" id="edit_users">
             <input type="hidden" id="username" name="username" value="<%=userName%>"/>
@@ -413,7 +413,7 @@
                                   numberOfPages="<%=numberOfPages%>"
                                   noOfPageLinksToDisplay="<%=noOfPageLinksToDisplay%>"
                                   page="view-roles.jsp" pageNumberParameterName="pageNumber"
-                                  parameters="<%="username="+userName%>"/>
+                                  parameters="<%=\"username=\"+userName%>"/>
             <%
                 if (roles != null && roles.length > 0 && exceededDomains != null) {
                     if(exceededDomains.getItemName() != null || exceededDomains.getItemDisplayName() != null){
