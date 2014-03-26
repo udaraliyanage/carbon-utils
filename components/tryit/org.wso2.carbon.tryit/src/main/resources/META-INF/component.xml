@@ -22,6 +22,10 @@
             <class>org.wso2.carbon.tryit.TryitRequestProcessor</class>
         </processor>
         <processor>
+            <item>wadltryit</item>
+            <class>org.wso2.carbon.tryit.WADLTryItRequestProcessor</class>
+        </processor>
+        <processor>
 			<item>stub</item>
 			<class>org.wso2.carbon.wsdl2form.StubRequestProcessor</class>
 		</processor>
@@ -29,6 +33,10 @@
 			<item>wsdl2form</item>
 			<class>org.wso2.carbon.wsdl2form.WSDL2FormRequestProcessor</class>
 		</processor>
+        <processor>
+            <item>wadl2form</item>
+            <class>org.wso2.carbon.tryit.WADL2FormRequestProcessor</class>
+        </processor>
     </httpGetRequestProcessors>
     <ManagementPermissions>
         <ManagementPermission>
