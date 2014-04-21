@@ -93,6 +93,8 @@ public interface TaskService {
 
         String getRemoteServerPassword();
 
+        String getLocationResolverClass();
+
     }
 
     public static enum TaskServerMode {

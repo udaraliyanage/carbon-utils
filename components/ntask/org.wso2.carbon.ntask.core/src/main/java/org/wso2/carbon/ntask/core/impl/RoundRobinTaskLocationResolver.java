@@ -15,14 +15,12 @@
  */
 package org.wso2.carbon.ntask.core.impl;
 
+import com.hazelcast.core.HazelcastInstance;
 import org.wso2.carbon.ntask.common.TaskException;
 import org.wso2.carbon.ntask.core.TaskInfo;
 import org.wso2.carbon.ntask.core.TaskLocationResolver;
 import org.wso2.carbon.ntask.core.TaskServiceContext;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import org.wso2.carbon.ntask.core.internal.TasksDSComponent;
 
 /**
  * This class represents a TaskLocationResolver implementation, which assigns a location to the task
@@ -30,31 +28,16 @@ import java.util.List;
  */
 public class RoundRobinTaskLocationResolver implements TaskLocationResolver {
 
+    private static final String ROUND_ROBIN_TASK_RESOLVER_ID = "__ROUND_ROBIN_TASK_RESOLVER_ID__";
+
     @Override
     public int getLocation(TaskServiceContext ctx, TaskInfo taskInfo) throws TaskException {
-        List<TaskInfo> tasks = ctx.getTasks();
-        List<String> names = new ArrayList<String>();
-        for (TaskInfo task : tasks) {
-            names.add(task.getName());
+        HazelcastInstance hz = TasksDSComponent.getHazelcastInstance();
+        if (hz == null) {
+            /* this cannot happen, because the task location resolvers are used in clustered mode */
+            return 0;
         }
-        Collections.sort(names);
-        int n = names.size();
-        for (int i = 0; i < n; i++) {
-            if (taskInfo.getName().equals(names.get(i))) {
-                int tenantTaskTypeOffset = (ctx.getTenantId() + ":" + ctx.getTaskType())
-                        .hashCode();
-                int result = i + tenantTaskTypeOffset;
-                if (result < 0) {
-                    if (result == Integer.MIN_VALUE) {
-                        result = Integer.MAX_VALUE;
-                    } else {
-                        result = -result;
-                    }
-                }
-                return result;
-            }
-        }
-        return 0;
+        return (int) Math.abs(hz.getAtomicLong(ROUND_ROBIN_TASK_RESOLVER_ID + ctx.getTaskType()).incrementAndGet());
     }
 
 }

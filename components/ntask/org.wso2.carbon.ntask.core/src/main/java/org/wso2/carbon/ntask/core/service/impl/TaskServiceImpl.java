@@ -148,20 +148,27 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public synchronized void registerTaskType(String taskType) throws TaskException {
         this.registeredTaskTypes.add(taskType);
+        this.processClusteredTaskTypeRegistration(taskType);
         /* if server has finished initializing, lets initialize the
          * task managers for this type */
         if (this.isServerInit()) {
             this.initTaskManagersForType(taskType);
         }
     }
+    
+    private void processClusteredTaskTypeRegistration(String taskType) throws TaskException {
+        if (this.getEffectiveTaskServerMode() == TaskServerMode.CLUSTERED) {
+            ClusterGroupCommunicator.getInstance(taskType).addMyselfToGroup();
+        }
+    }
 
     @Override
     public synchronized void serverInitialized() {
         try {
+            this.serverInit = true;
             for (String taskType : this.getRegisteredTaskTypes()) {
                 this.initTaskManagersForType(taskType);
-            }
-            this.serverInit = true;
+            }            
         } catch (TaskException e) {
             String msg = "Error initializing task managers: " + e.getMessage();
             log.error(msg, e);
@@ -188,6 +195,8 @@ public class TaskServiceImpl implements TaskService {
 
         private String remoteServerPassword;
 
+        private String locationResolverClass;
+
         public TaskServiceConfigurationImpl(TaskServiceXMLConfiguration taskXMLConfig) {
             this.processXMLConfig(taskXMLConfig);
             this.processSystemProps();
@@ -203,6 +212,7 @@ public class TaskServiceImpl implements TaskService {
             this.remoteServerPassword = taskXMLConfig.getRemoteServerPassword();
             this.taskServerMode = taskXMLConfig.getTaskServerMode();
             this.taskServerCount = taskXMLConfig.getTaskServerCount();
+            this.locationResolverClass = taskXMLConfig.getLocationResolverClass();
         }
 
         private void processSystemProps() {
@@ -268,6 +278,11 @@ public class TaskServiceImpl implements TaskService {
             return taskServerCount;
         }
 
+        @Override
+        public String getLocationResolverClass() {
+            return locationResolverClass;
+        }
+
     }
 
     public TaskServerMode getEffectiveTaskServerMode() {
@@ -277,7 +292,9 @@ public class TaskServiceImpl implements TaskService {
     @Override
     public void runAfterRegistrationActions() throws TaskException {
         if (this.getEffectiveTaskServerMode() == TaskServerMode.CLUSTERED) {
-            ClusterGroupCommunicator.getInstance().checkServers();
+            for (String taskType : this.getRegisteredTaskTypes()) {
+                ClusterGroupCommunicator.getInstance(taskType).checkServers();
+            }
         }
     }
 

@@ -18,7 +18,7 @@ package org.wso2.carbon.ntask.core;
 import org.wso2.carbon.ntask.common.TaskConstants;
 import org.wso2.carbon.ntask.common.TaskConstants.TaskMisfirePolicy;
 import org.wso2.carbon.ntask.core.impl.FixedLocationResolver;
-import org.wso2.carbon.ntask.core.impl.RandomTaskLocationResolver;
+import org.wso2.carbon.ntask.core.internal.TasksDSComponent;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
@@ -50,7 +50,9 @@ public class TaskInfo implements Serializable {
 
     @Deprecated
     public TaskInfo() {
-        this.locationResolverClass = RandomTaskLocationResolver.class.getName();
+        this.locationResolverClass = TasksDSComponent.getTaskService()
+                .getServerConfiguration().getLocationResolverClass();
+        this.properties = new HashMap<String, String>();
     }
 
     /**
@@ -65,7 +67,8 @@ public class TaskInfo implements Serializable {
      */
     public TaskInfo(String name, String taskClass, Map<String, String> properties,
             TriggerInfo triggerInfo) {
-        this(name, taskClass, properties, RandomTaskLocationResolver.class.getName(), triggerInfo);
+        this(name, taskClass, properties, TasksDSComponent.getTaskService()
+                .getServerConfiguration().getLocationResolverClass(), triggerInfo);
     }
 
     /**

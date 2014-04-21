@@ -13,6 +13,9 @@
       the task server cluster, the servers wait till this amount of servers
       are activated before the tasks are scheduled -->
     <taskServerCount>2</taskServerCount>
+
+    <!-- The location resover class to resolve the location for the task -->
+    <locationResolverClass>org.wso2.carbon.ntask.core.impl.RandomTaskLocationResolver</locationResolverClass>
     
     <!-- The address to which the remote task server should dispatch the trigger messages to, 
       usually this would be an endpoint to a load balancer -->

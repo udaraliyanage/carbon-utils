@@ -27,6 +27,7 @@ import org.wso2.carbon.ntask.core.impl.clustered.rpc.RunningTasksInServerCall;
 import org.wso2.carbon.ntask.core.impl.clustered.rpc.ScheduleTaskCall;
 import org.wso2.carbon.ntask.core.impl.clustered.rpc.TaskCall;
 import org.wso2.carbon.ntask.core.impl.clustered.rpc.TaskStateCall;
+import org.wso2.carbon.ntask.core.internal.TasksDSComponent;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,7 +55,7 @@ public class ClusteredTaskManager extends AbstractQuartzTaskManager {
     }
 
     public ClusterGroupCommunicator getClusterComm() throws TaskException {
-        return ClusterGroupCommunicator.getInstance();
+        return ClusterGroupCommunicator.getInstance(this.getTaskType());
     }
 
     public void initStartupTasks() throws TaskException {
@@ -90,6 +91,9 @@ public class ClusteredTaskManager extends AbstractQuartzTaskManager {
     }
 
     public void scheduleTask(String taskName) throws TaskException {
+        if (!TasksDSComponent.getTaskService().isServerInit()) {
+            return;
+        }
         try {
             String memberId = this.getMemberIdFromTaskName(taskName, true);
             this.setServerLocationOfTask(taskName, memberId);
@@ -101,6 +105,9 @@ public class ClusteredTaskManager extends AbstractQuartzTaskManager {
     }
 
     public void rescheduleTask(String taskName) throws TaskException {
+        if (!TasksDSComponent.getTaskService().isServerInit()) {
+            return;
+        }
         try {
             String memberId = this.getMemberIdFromTaskName(taskName, true);
             this.setServerLocationOfTask(taskName, memberId);
@@ -153,18 +160,31 @@ public class ClusteredTaskManager extends AbstractQuartzTaskManager {
     }
 
     public boolean deleteTask(String taskName) throws TaskException {
+        boolean result = true;
+        String memberId = null;
         try {
-            String memberId = this.getMemberIdFromTaskName(taskName, false);
-            boolean result = this.deleteTask(memberId, taskName);
-            /* the delete has to be done here, because, this would be the admin
-             * node with read/write registry access, and the target slave will
-             * not have write access */
-            result &= this.getTaskRepository().deleteTask(taskName);
-            return result;
+            memberId = this.getMemberIdFromTaskName(taskName, false);
+        } catch (TaskException e) {
+            /* if the task is not scheduled anywhere, we can ignore this delete request to the
+             * remote server */
+            if (!Code.NO_TASK_EXISTS.equals(e.getCode())) {
+                throw new TaskException("Error in getting member from task name: " + e.getMessage(), 
+                        Code.UNKNOWN, e);
+            }
+        }
+        try {
+            /* only if the task is running somewhere, send a delete task call */
+            if (memberId != null) {
+                result = this.deleteTask(memberId, taskName);
+            }
         } catch (Exception e) {
             throw new TaskException("Error in deleting task: " + taskName + " : " + e.getMessage(),
-                    Code.UNKNOWN, e);
+                        Code.UNKNOWN, e);
         }
+        /* the delete from repository has to be done here, because, this would be the admin node
+         * with read/write registry access, and the target slave will not have write access */
+        result &= this.getTaskRepository().deleteTask(taskName);
+        return result;        
     }
 
     public void pauseTask(String taskName) throws TaskException {
@@ -219,7 +239,7 @@ public class ClusteredTaskManager extends AbstractQuartzTaskManager {
 
     private TaskServiceContext getTaskServiceContext() throws TaskException {
         TaskServiceContext context = new TaskServiceContext(this.getTaskRepository(),
-                this.getServerCount());
+                this.getMemberIds(), this.getClusterComm().getMemberMap());
         return context;
     }
 

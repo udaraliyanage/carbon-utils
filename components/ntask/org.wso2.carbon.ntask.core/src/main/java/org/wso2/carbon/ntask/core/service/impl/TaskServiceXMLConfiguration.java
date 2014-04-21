@@ -38,6 +38,11 @@ public class TaskServiceXMLConfiguration {
 
     private String remoteServerPassword;
 
+    private String locationResolverClass;
+
+    private static final String DEFAULT_LOCATION_RESOLVER_CLASS =
+            "org.wso2.carbon.ntask.core.impl.RandomTaskLocationResolver";
+
     public TaskServerMode getTaskServerMode() {
         return taskServerMode;
     }
@@ -89,6 +94,18 @@ public class TaskServiceXMLConfiguration {
 
     public void setRemoteServerPassword(String remoteServerPassword) {
         this.remoteServerPassword = remoteServerPassword;
+    }
+
+    @XmlElement(nillable = true, defaultValue = DEFAULT_LOCATION_RESOLVER_CLASS)
+    public String getLocationResolverClass() {
+        if (locationResolverClass == null) {
+            return DEFAULT_LOCATION_RESOLVER_CLASS;
+        }
+        return locationResolverClass;
+    }
+
+    public void setLocationResolverClass(String locationResolverClass) {
+        this.locationResolverClass = locationResolverClass;
     }
 
 }
