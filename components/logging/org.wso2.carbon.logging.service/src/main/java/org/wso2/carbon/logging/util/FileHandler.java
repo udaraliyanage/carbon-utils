@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.URI;
+import java.net.*;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -165,8 +165,16 @@ public class FileHandler {
 		try {
 			LoggingConfig config = LoggingConfigManager
 					.loadLoggingConfiguration();
-			url = getFileLocation(config.getArchivedHDFSPath(), "", domain,
-					serverKey);
+
+			//health checker for HDFS
+			boolean isHDFSAccessible = isHDFSAvailable(config.getArchivedHost());
+			if(!isHDFSAccessible) {
+				return null;
+            }
+
+            url = getFileLocation(config.getArchivedHDFSPath(), "", domain, 
+            	serverKey);
+
 			Configuration conf = new Configuration(false);
 			conf.set("fs.default.name", config.getArchivedHost());
 			conf.set("fs.hdfs.impl",
@@ -217,6 +225,38 @@ public class FileHandler {
 			throw new LogViewerException("Cannot get log files from " + url, e);
 		}
 	}
+
+	private boolean isHDFSAvailable(String hostName) {
+        String temp[] = hostName.split(":");
+
+        String host = temp[1].substring(2);
+
+        //80 is the default port
+        String port = "80";
+        if (temp.length>2){
+        	port = temp[2];
+    	}
+    	
+        InetAddress addr;
+        try {
+            addr = InetAddress.getByName(host);
+        } catch (UnknownHostException e) {
+            log.error("HDFS " + host + " is unreachable.");
+            return false;
+        }
+        SocketAddress httpSockaddr = new InetSocketAddress(addr, Integer.parseInt(port));
+        try {
+            new Socket().connect(httpSockaddr, 10000);
+            return true;
+        } catch (IOException e) {
+            String msg = e.getMessage();
+            if (!msg.contains("Connection refused") && !msg.contains("connect timed out")) {
+                String msg2 = "Cannot connect to HDFS ";
+                log.error(msg2, e);
+            }
+            return false;
+        }
+    }
 	
 	private boolean isLogFile(String fileName) {
 		String archivePattern = "[a-zA-Z]*\\.log";
